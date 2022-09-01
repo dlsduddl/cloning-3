@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배민문방구 클론코딩</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<header>
+  <div class="top-bar flex align-center">
+    <div class="logo-img flex-shrink-0">
+      <img src="data:image/png;base64,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" alt="logo">
+    </div>
+    <div class="menu-bar flex-grow">
+      <ul class="flex">
+        <li><a href="#">전체</a></li>
+        <li><a href="#">문구</a></li>
+        <li><a href="#">리빙</a></li>
+        <li><a href="#">책/매거진F</a></li>
+        <li><a href="#">배민그린</a></li>
+        <li><a href="#">배달이친구들</a></li>
+        <li><a href="#">콜라보레이션</a></li>
+        <li><a href="#">명예의 전당</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right flex flex-shrink-0 align-center justify-center">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-solid fa-cart-shopping"></i>
+      <a href="#">로그인</a>
+      <i class="fa-solid fa-bars"></i>
+      
+    </div>
+  </div>
+</header>
+</body>
+</html>
