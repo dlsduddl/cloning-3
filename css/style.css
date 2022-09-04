@@ -14,6 +14,9 @@ a {
   margin-right: auto;
   margin-left: auto;
 }
+.con {
+  width: 1200px;
+}
 .flex {
   display: flex;
 }
@@ -167,23 +170,23 @@ html {
   color: gray;
 }
 
-.menu-popup-body > .theme,
-.menu-popup-body > .category {
+.menu-popup-body > .popup-body-m > .theme,
+.menu-popup-body > .popup-body-m > .category {
   margin-top: 40px;
 }
-.menu-popup-body > .theme > span,
-.menu-popup-body > .category > span {
+.menu-popup-body > .popup-body-m > .theme > span,
+.menu-popup-body > .popup-body-m > .category > span {
  color:gray;
 }
-.menu-popup-body > .theme > p,
-.menu-popup-body > .category > p {
+.menu-popup-body > .popup-body-m > .theme > p,
+.menu-popup-body > .popup-body-m > .category > p {
   font-size:1.3rem;
   font-weight:bold;
   margin-bottom:-5px;
   cursor:pointer;  
 }
-.menu-popup-body > .theme > p:hover,
-.menu-popup-body > .category > p:hover {
+.menu-popup-body > .popup-body-m > .theme > p:hover,
+.menu-popup-body > .popup-body-m > .category > p:hover {
   color:#5fddda;
 }
 
@@ -197,6 +200,8 @@ html {
   align-items:center;
   position:absolute;
   bottom:0;
+  background-color:white;
+  z-index:1;
 }
 .menu-popup-foot > i {
   font-size:1.5rem;
@@ -218,6 +223,210 @@ html {
 }
 
 
+/* 배너 슬라이드 */
+.banner-slide {
+  overflow:hidden;
+}
+.banner-slide > .slides {
+  width:500vw;
+  transition: transform, 1s;
+}
+.banner-slide > .slides > .slide {
+  width: 100vw;
+  float:left;
+}
+
+
+/* 배너슬라이드 버튼 */
+.banner {
+  position:relative;
+}
+.banner-button {
+  position:absolute;
+  top:95%;
+  left: 50%;
+  transition: translate(-50%,-50%);
+}
+.banner-button > div{
+  width: 12px;
+  height: 12px;
+  background-color:gray;
+  border-radius:50%;
+  margin:4px;
+  float:left;
+  cursor:pointer;
+}
+
+/* section-1 */
+.section-1-1 {
+  margin-top: 120px;
+}
+
+/* 섹션1-2 슬라이드 */
+.section-1-2 {
+  width: 100%;
+  height: 467px;
+}
+
+.section-1-2 input[id*="slide"] {
+  display:none;
+}
+.section-1-2 {
+  position:relative;
+}
+.section-1-2 > .slidewrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow:hidden;
+}
+.section-1-2 .slidelist {
+  white-space:nowrap;
+  font-size:0;
+  margin-top: 50px;
+  margin-left: 70px;
+  width:1050px;
+  overflow:hidden;
+  height:417px;
+}
+.section-1-2 .slidelist > li {
+  display: inline-block;
+  vertical-align:middle;
+  width: 100%;
+  height:100%;
+  transition: all ,1s;
+}
+.section-1-2 .slidelist > li > a {
+  width:100%;
+  height:100%;
+}
+.section-1-2 .slidelist > li > a > div > .txt {
+  border :1px solid blue;
+  width: 100px;
+  height: 100px;
+  color:black;
+}
+
+.section-1-2 .slidelist > li > a > div > img {
+  padding:10px;
+  width:312px;
+}
+.section-1-2 .slidelist > li > a > div {
+  overflow:hidden;
+  margin: 0 10px;
+  height:100%;
+  background-color:gold;
+}
+
+.section-1-2 .slidelist label {
+  position:absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translatey(-50%);
+  padding:50px;
+  cursor: pointer;
+}
+.section-1-2 .slidelist .left {
+  left:-20px;
+  background:url('https://brandstore.baemin.com/assets/image/web/main_arr_prev_on.png') center center / 60% no-repeat;
+  opacity:70%;
+}
+.section-1-2 .slidelist .right {
+  right: -20px;
+  background:url('https://brandstore.baemin.com/assets/image/web/main_arr_next_on.png') center center / 60% no-repeat;
+  opacity:70%;
+}
+
+
+.section-1-2 [id="slide01"]:checked ~ .slidewrap .slidelist > li {
+  transform: translatex(0%);
+}
+.section-1-2 [id="slide02"]:checked ~ .slidewrap .slidelist > li {
+  transform: translatex(-100%);
+}
+.section-1-2 [id="slide03"]:checked ~ .slidewrap .slidelist > li {
+  transform: translatex(-200%);
+}
+
+.section-1-2 .slide-control [class*="control"] {
+  display:none;
+}
+.section-1-2 [id="slide01"]:checked ~ .slidewrap .control01 {
+  display: block;
+}
+.section-1-2 [id="slide02"]:checked ~ .slidewrap .control02 {
+  display: block;
+}
+
+/* 섹션1-2 슬라이드 호버 */
+.slide-img-hide {
+  margin-top:-331px;
+  z-index:-1;
+}
+.slidelist > li > a > div {
+  display:flex;
+  flex-direction:column;
+}
+.slidelist > li > a > div:hover > .slide-img-hide {
+  z-index:1;
+}
+
+/* 섹션2 */
+.section-2 > .section-2-wrap {
+  margin-top: 100px;
+  padding-top: 100px;
+  border-top: 1px solid #ddd;
+}
+.section-2-txt {
+  align-self:center;
+  font-size:1.8rem;
+  font-weight:bold;
+}
+.section-2-content > div {
+  width: 300px;
+  height: 494px;
+  float:left;
+}
+.section-2-content > div > .img-wrap > img {
+  width: 282px;
+  margin-top:80px;
+  margin-left:9px;
+  cursor:pointer;
+}
+.content-txt {
+  margin-top:10px;
+  cursor:pointer;
+}
+.content-txt > p {
+  align-self:center;
+  font-size:0.95rem;
+  margin:0;
+  padding:5px;
+}
+.content-txt > span {
+  align-self:center;
+  font-size:75%;
+  color:blue;
+  font-weight:bold;
+  padding: 1px;
+  border-bottom:1px solid blue;
+}
+.section-2-content > div:hover > .content-txt > p {
+  color:#5fddda;
+}
+.img-wrap {
+  position:relative;
+}
+.slide-img-hide2 {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+  opacity:0;
+  transition: opacity, 0.3s;
+}
+.section-2-content > div:hover > .img-wrap > .slide-img-hide2 {
+  opacity:1;
+}
 
 
 
@@ -234,103 +443,13 @@ html {
     display:none;
   }
 /*   탑바 메뉴 팝업 */
-  .menu-popup-body > .theme {
+  .menu-popup-body > .popup-body-m > .theme {
     display:none;
   }
-  .menu-popup-body > .category > p {
+  .menu-popup-body > .popup-body-m > .category > p {
     font-size:1.5rem;
   }
 }
-
-
-/* 배너 슬라이드 */
-
-.section-1 input[id*="slide"] {
-  display:none;
-}
-.section-1 {
-  position:absolute;
-  top:0;
-}
-.section-1 .slidewrap {
-  margin: 0 auto;
-  overflow:hidden;
-}
-.section-1 .slidelist {
-  white-space:nowrap;
-  font-size:0;
-}
-.section-1 .slidelist > li {
-  display:inline-block;
-  vertical-align:middle;
-  width: 100%;
-  transition: all ,2s;
-}
-.section-1 .slidelist > li > a > img {
-  width:100%;
-
-}
-.section-1 .slidelist > li > a {
-  display:block;
-  position:relative;
-}
-
-.section-1 .slidelist label {
-  position:absolute;
-  z-index: 10;
-  top: 50%;
-  transform: translatey(-50%);
-  padding:50px;
-  cursor: pointer;
-}
-.section-1 .slidelist .left {
-  left:50px; background:url('https://brandstore.baemin.com/assets/image/web/main_arr_prev_on.png') center center / 60% no-repeat;
-}
-.section-1 .slidelist .right {
-  right: 50px; background:url('https://brandstore.baemin.com/assets/image/web/main_arr_next_on.png') center center / 60% no-repeat;
-}
-
-
-.section-1 [id="slide01"]:checked ~ .slidewrap .slidelist > li {
-  transform: translatex(0%);
-}
-.section-1 [id="slide02"]:checked ~ .slidewrap .slidelist > li {
-  transform: translatex(-100%);
-}
-.section-1 [id="slide03"]:checked ~ .slidewrap .slidelist > li {
-  transform: translatex(-200%);
-}
-.section-1 [id="slide04"]:checked ~ .slidewrap .slidelist > li {
-  transform: translatex(-300%);
-  }
-.section-1 [id="slide05"]:checked ~ .slidewrap .slidelist > li {
-  transform: translatex(-400%);
-  }
-
-.section-1 .slide-control [class*="control"] {
-  display:none;
-}
-.section-1 [id="slide01"]:checked ~ .slidewrap .control01 {
-  display: block;
-}
-.section-1 [id="slide02"]:checked ~ .slidewrap .control02 {
-  display: block;
-}
-.section-1 [id="slide03"]:checked ~ .slidewrap .control03 {
-  display: block;
-}
-.section-1 [id="slide04"]:checked ~ .slidewrap .control04 {
-  display: block;
-}
-.section-1 [id="slide05"]:checked ~ .slidewrap .control05 {
-  display: block;
-}
-
-
-
-
-
-
 
 /* 스마트폰 반응형 */
 @media ( max-width:640px ) {
@@ -356,10 +475,10 @@ html {
   .menu-popup-body > .log-in > p{
     font-size: 1.5rem;
   }
-  .menu-popup-body > .theme {
+  .menu-popup-body > .popup-body-m > .theme {
     display:none;
   }
-  .menu-popup-body > .category > p {
+  .menu-popup-body > .popup-body-m > .category > p {
     font-size:1.6rem;
   }
 }
