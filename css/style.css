@@ -258,7 +258,7 @@ html {
   position:absolute;
   top:95%;
   left: 50%;
-  transition: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 .banner-button > div{
   width: 12px;
@@ -272,116 +272,105 @@ html {
 
 /* section-1 */
 .section-1-1 {
-  margin-top: 120px;
-}
-
-/* 섹션1-2 슬라이드 */
-.section-1-2 {
-  width: 100%;
-  height: 467px;
-}
-
-.section-1-2 input[id*="slide"] {
-  display:none;
+  margin-top: 120px;  
 }
 .section-1-2 {
   position:relative;
+  height:500px;
 }
-.section-1-2 > .slidewrap {
-  max-width: 1200px;
-  margin: 0 auto;
+.section-slide-wrap {
   overflow:hidden;
-}
-.section-1-2 .slidelist {
-  white-space:nowrap;
-  font-size:0;
-  margin-top: 50px;
-  margin-left: 70px;
-  width:1050px;
-  overflow:hidden;
-  height:417px;
-}
-.section-1-2 .slidelist > li {
-  display: inline-block;
-  vertical-align:middle;
-  width: 100%;
-  height:100%;
-  transition: all ,1s;
-}
-.section-1-2 .slidelist > li > a {
-  width:100%;
-  height:100%;
-}
-.section-1-2 .slidelist > li > a > div > .txt {
-  border :1px solid blue;
-  width: 100px;
-  height: 100px;
-  color:black;
-}
-
-.section-1-2 .slidelist > li > a > div > img {
-  padding:10px;
-  width:312px;
-}
-.section-1-2 .slidelist > li > a > div {
-  overflow:hidden;
-  margin: 0 10px;
-  height:100%;
-  background-color:gold;
-}
-
-.section-1-2 .slidelist label {
   position:absolute;
-  z-index: 10;
   top: 50%;
-  transform: translatey(-50%);
-  padding:50px;
-  cursor: pointer;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 1000px;
 }
-.section-1-2 .slidelist .left {
-  left:-20px;
-  background:url('https://brandstore.baemin.com/assets/image/web/main_arr_prev_on.png') center center / 60% no-repeat;
-  opacity:70%;
-}
-.section-1-2 .slidelist .right {
-  right: -20px;
-  background:url('https://brandstore.baemin.com/assets/image/web/main_arr_next_on.png') center center / 60% no-repeat;
-  opacity:70%;
-}
-
-
-.section-1-2 [id="slide01"]:checked ~ .slidewrap .slidelist > li {
-  transform: translatex(0%);
-}
-.section-1-2 [id="slide02"]:checked ~ .slidewrap .slidelist > li {
-  transform: translatex(-100%);
-}
-.section-1-2 [id="slide03"]:checked ~ .slidewrap .slidelist > li {
-  transform: translatex(-200%);
-}
-
-.section-1-2 .slide-control [class*="control"] {
-  display:none;
-}
-.section-1-2 [id="slide01"]:checked ~ .slidewrap .control01 {
-  display: block;
-}
-.section-1-2 [id="slide02"]:checked ~ .slidewrap .control02 {
-  display: block;
-}
-
-/* 섹션1-2 슬라이드 호버 */
-.slide-img-hide {
-  margin-top:-331px;
-  z-index:-1;
-}
-.slidelist > li > a > div {
+.section-slide {
+  width: 1000px;
+  transition: transform, 1s;
   display:flex;
-  flex-direction:column;
 }
-.slidelist > li > a > div:hover > .slide-img-hide {
-  z-index:1;
+.section-slide > div {
+  width: 320px;
+  margin:0 7px;
+
 }
+.section-slide > div > a > img {
+ width:320px;
+}
+
+/* 호버시 다른 이미지 */
+.slide-img-hide {
+  margin-top:-320px;
+  top:0;
+  left:0;
+  opacity:0;
+  transition: transform, .2s;
+}
+.section-slide > div > a:hover > .slide-img-hide {
+  opacity: 1;
+}
+/* 폰트 */
+.section-slide-txt {
+  text-align:center;
+  margin-top: 10px;
+}
+.section-slide-txt > .best,
+.section-slide-txt > .sale {
+ font-size:0.7rem;
+  color: red;
+  font-weight:bold;
+  border-bottom: 1px solid red;
+  padding: 3px;
+  margin-right:3px;
+}
+.section-slide-txt > .best {
+  color: blue;
+  border-bottom: 1px solid blue;
+}
+.section-slide-txt > p {
+  font-weight:bold;
+  font-size:0.95rem;
+}
+.section-slide-txt > .price,
+.section-slide-txt > .sale-price {
+  padding:3px;
+  font-size:0.95rem;
+  font-weight:bold;
+}
+.section-slide-txt > .price {
+  color: #ddd;
+  text-decoration:line-through;
+}
+.section-slide-txt > .sold-out {
+  color: gray;
+}
+.section-slide > div > a:hover > .section-slide-txt > .sold-out,
+.section-slide > div > a:hover > .section-slide-txt > .price,
+.section-slide > div > a:hover > .section-slide-txt > .sale-price,
+.section-slide > div > a:hover > .section-slide-txt > p {
+  color:#5fddda;
+}
+
+
+/* 슬라이드 버튼 */
+.button > div > img {
+width: 100px;
+  cursor:pointer;
+}
+.button > .button-left {
+  position:absolute;
+  top:50%;
+  transform: translatey(-50%);
+}
+.button > .button-right {
+  position:absolute;
+  top: 50%;
+  right:0;
+  transform:translatey(-50%);
+}
+
 
 /* 섹션2 */
 .section-2 > .section-2-wrap {
@@ -408,6 +397,7 @@ html {
 .content-txt {
   margin-top:10px;
   cursor:pointer;
+  text-align: center;
 }
 .content-txt > p {
   align-self:center;
