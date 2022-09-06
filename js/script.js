@@ -2,11 +2,11 @@ console.clear();
 
 // 메뉴바 팝업1
 function Menu1Popup__show() {
-  $('.menu-popup').show();
+  $('.menu-popup').addClass("popup-active");
  }
 
  function Menu1Popup__hide() {
-   $('.menu-popup').hide();
+   $('.menu-popup').removeClass("popup-active");
  }
 
  function Menu1Popup__init() {
@@ -21,7 +21,8 @@ function Menu1Popup__show() {
 
  Menu1Popup__init();
 
-  // 배너슬라이드 
+
+ // 배너슬라이드 
 document.querySelector('.button1').addEventListener('click',function(){
   document.querySelector('.slides').style.transform = 'translate(0vw)';
 })
