@@ -40,9 +40,17 @@ document.querySelector('.button5').addEventListener('click',function(){
 })
 
 // section-1-2 슬라이드 버튼
-document.querySelector('.button-left').addEventListener('click',function(){
-  document.querySelector('.section-slide').style.transform = 'translate(0)';
+document.querySelector('.button-left-1').addEventListener('click',function(){
+  document.querySelector('.section-slide-1').style.transform = 'translate(0)';
 })
-document.querySelector('.button-right').addEventListener('click',function(){
-  document.querySelector('.section-slide').style.transform = 'translate(-665px)';
+document.querySelector('.button-right-1').addEventListener('click',function(){
+  document.querySelector('.section-slide-1').style.transform = 'translate(-665px)';
+})
+
+// section-3-2 슬라이드 버튼
+document.querySelector('.button-left-3').addEventListener('click',function(){
+  document.querySelector('.section-slide-3').style.transform = 'translate(0)';
+})
+document.querySelector('.button-right-3').addEventListener('click',function(){
+  document.querySelector('.section-slide-3').style.transform = 'translate(-665px)';
 })
